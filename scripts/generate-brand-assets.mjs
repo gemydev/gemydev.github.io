@@ -41,7 +41,7 @@ const card = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" 
   <rect width="1200" height="630" fill="url(#wash)"/>
   <text x="72" y="318" font-family="${sans}" font-size="56" font-weight="700" fill="#eceef2" letter-spacing="-1.2">${esc(profile.name)}</text>
   <text x="72" y="384" font-family="${sans}" font-size="40" font-weight="500" fill="#7aa2ff" letter-spacing="-0.5">${esc(profile.title)}</text>
-  <text x="72" y="448" font-family="${sans}" font-size="25" fill="#a3a9b5">Flutter · Android &amp; iOS · Offline-first · Real-time · CI/CD</text>
+  <text x="72" y="448" font-family="${sans}" font-size="25" fill="#a3a9b5">Flutter · Android &amp; iOS · Performance · Security · Offline-first</text>
   <line x1="72" y1="510" x2="740" y2="510" stroke="#ffffff" stroke-opacity="0.08"/>
   <text x="72" y="556" font-family="${mono}" font-size="21" fill="#868d9a">github.com/gemydev  ·  linkedin.com/in/gemydev</text>
 </svg>`;

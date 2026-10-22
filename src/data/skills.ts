@@ -20,6 +20,17 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
+    category: 'Performance & monitoring',
+    items: [{ name: 'Flutter DevTools' }, { name: 'Sentry' }, { name: 'Firebase Crashlytics' }, { name: 'Firebase Analytics' }],
+  },
+  {
+    category: 'Mobile security',
+    items: [
+      { name: 'OWASP MASVS / MASTG' }, { name: 'MobSF' }, { name: 'Frida' },
+      { name: 'Burp Suite' }, { name: 'Semgrep' }, { name: 'Snyk' },
+    ],
+  },
+  {
     category: 'Networking & real-time',
     items: [
       { name: 'REST APIs' }, { name: 'dio' }, { name: 'http' }, { name: 'WebSocket' },
@@ -42,21 +53,10 @@ export const skills: SkillGroup[] = [
     items: [{ name: 'Thermal printers · ESC/POS' }, { name: 'Bluetooth printing' }, { name: 'Network printing' }],
   },
   {
-    category: 'Performance & debugging',
-    items: [{ name: 'Flutter DevTools' }, { name: 'Sentry' }, { name: 'Firebase Crashlytics' }, { name: 'Firebase Analytics' }],
-  },
-  {
     category: 'CI/CD & tools',
     items: [
       { name: 'GitHub Actions' }, { name: 'Codemagic' }, { name: 'Fastlane' }, { name: 'Git · GitHub · Bitbucket' },
       { name: 'Postman' }, { name: 'Figma' }, { name: 'Jira' }, { name: 'Scrum' },
-    ],
-  },
-  {
-    category: 'Mobile security',
-    items: [
-      { name: 'OWASP MASVS / MASTG' }, { name: 'MobSF' }, { name: 'Frida' },
-      { name: 'Burp Suite' }, { name: 'Semgrep' }, { name: 'Snyk' },
     ],
   },
   {

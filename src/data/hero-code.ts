@@ -18,6 +18,8 @@ final engineer = FlutterEngineer(
   platforms: const {android, iOS, tablet},
   state: const [Bloc, Cubit, Riverpod],
   strengths: const [
+    'performance & profiling',
+    'security · OWASP MASVS',
     'offline-first sync',
     'real-time · WebRTC & sockets',
     'ESC/POS thermal printing',

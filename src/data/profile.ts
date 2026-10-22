@@ -3,12 +3,12 @@ export const profile = {
   shortName: 'Mohamed Gamal',
   title: 'Senior Flutter Developer',
   intro:
-    'Five years building and shipping Flutter apps for Android and iOS, on phones and tablets: from an offline-first POS & ERP system and a real-estate investment app I built end to end, to marketplaces, e-commerce and B2B products.',
+    'Five years building and shipping fast, secure Flutter apps for Android and iOS, on phones and tablets: from an offline-first POS & ERP system and a real-estate investment app I built end to end, to marketplaces, e-commerce and B2B products.',
   /** Types of apps shown under the intro (all from the projects section) */
   appTypes: ['Fintech', 'POS & ERP', 'Food marketplace', 'E-commerce', 'Legal-tech', 'B2B & SaaS', 'Community', 'On-demand'],
   /** Search/social description, kept under ~160 characters */
   metaDescription:
-    'Mohamed Gamal Yaseen, Senior Flutter Developer. 5 years building Android & iOS apps end to end, including an offline-first POS and a real-estate investment app.',
+    'Mohamed Gamal, Senior Flutter Developer. 5 years building fast, secure Android & iOS apps, including an offline-first POS and a real-estate investment app.',
   /** Social preview card in public/ (regenerate with npm run brand) */
   ogImage: 'og.jpg',
   email: 'mohamedgamaldev11@gmail.com',
@@ -26,17 +26,17 @@ export const profile = {
   ],
   about: [
     "I'm a Senior Flutter Developer who takes ownership of the whole application — not just the screens. I built four products in their entirety, from the first architecture decisions through to delivery.",
-    'My strongest work sits where mobile gets difficult: an offline-first POS & ERP system that runs on a local database and syncs with the server later, phone and tablet layouts from a single codebase, and a real-estate investment app with complex financial requirements.',
-    "I've shipped across fintech, retail, B2B wholesale, customer support, on-demand services, food delivery and legal-tech — working closely with designers and product teams on apps for the Saudi and Egyptian markets.",
+    'Performance and security are part of how I build, not an afterthought. I profile and debug with Flutter DevTools, keep an eye on production health with Sentry, Firebase Crashlytics and Analytics, and review apps against OWASP MASVS/MASTG, testing with MobSF, Frida and Burp Suite and scanning code with Semgrep and Snyk.',
+    "That discipline matters most where mobile gets difficult: an offline-first POS & ERP system that keeps working on a local database and syncs later, one codebase for phones and tablets, and a real-estate investment app with complex financial requirements — across fintech, retail, B2B, marketplaces and legal-tech for the Saudi and Egyptian markets.",
   ],
   focus: [
+    'App performance & profiling',
+    'Mobile security (OWASP MASVS)',
+    'Production monitoring & debugging',
     'Offline-first apps & data sync',
     'BLoC / Cubit architecture',
     'Phone & tablet adaptive UI',
     'Real-time communication',
-    'Thermal printing (ESC/POS)',
     'CI/CD & store releases',
-    'Performance & debugging',
-    'Mobile security (OWASP MASVS)',
   ],
 } as const;
