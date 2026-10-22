@@ -1,0 +1,52 @@
+---
+import { heroCode } from '../data/hero-code';
+import { highlightDart } from '../lib/highlight-dart';
+
+// The "cursor" line is the last line with real code (not just closing brackets).
+const activeLine = (code: string) => code.replace(/\n$/, '').split('\n').findLastIndex((l) => !/^[\s})\];,]*$/.test(l));
+const files = heroCode.map((f) => ({ ...f, lines: highlightDart(f.code), active: activeLine(f.code) }));
+// Reserve room for the longest file so switching tabs doesn't shift the layout.
+const rows = Math.max(...files.map((f) => f.lines.length));
+---
+<figure class="editor" aria-label="Code sample describing Mohamed's profile" style={`--rows:${rows}`}>
+  <div class="editor__bar">
+    <span class="editor__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <div class="editor__tabs" role="tablist" aria-label="Files" data-code-tabs>
+      {files.map((f, i) => (
+        <button
+          class:list={['editor__tab', { 'is-active': i === 0 }]}
+          type="button"
+          role="tab"
+          id={`code-tab-${f.id}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          aria-controls={`code-panel-${f.id}`}
+          tabindex={i === 0 ? 0 : -1}
+        >
+          <span class="editor__file-dot" aria-hidden="true"></span>
+          {f.name}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  {files.map((f, i) => (
+    <div
+      class="editor__panel"
+      role="tabpanel"
+      id={`code-panel-${f.id}`}
+      aria-labelledby={`code-tab-${f.id}`}
+      hidden={i !== 0}
+      data-path={f.path}
+      data-lines={f.lines.length}
+    >
+      <pre class="editor__code" tabindex="0"><code>{f.lines.map((line, n) => (
+        <span class:list={['line', { 'line--active': n === f.active }]} style={`--i:${n}`}><span class="ln" aria-hidden="true">{n + 1}</span><Fragment set:html={line || ' '} /></span>
+      ))}</code></pre>
+    </div>
+  ))}
+
+  <figcaption class="editor__status">
+    <span class="editor__path" data-code-path>{files[0].path}</span>
+    <span>Dart · UTF-8</span>
+  </figcaption>
+</figure>

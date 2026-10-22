@@ -88,6 +88,42 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('is-visible'));
 }
 
+// Code window tabs (WAI-ARIA tabs pattern: click, arrow keys, Home/End)
+const tabList = document.querySelector<HTMLElement>('[data-code-tabs]');
+if (tabList) {
+  const tabs = [...tabList.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+  const pathLabel = document.querySelector<HTMLElement>('[data-code-path]');
+  const select = (tab: HTMLButtonElement, focus = false) => {
+    tabs.forEach((t) => {
+      const active = t === tab;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-selected', String(active));
+      t.tabIndex = active ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute('aria-controls') ?? '');
+      if (panel) {
+        panel.hidden = !active;
+        if (active && pathLabel) pathLabel.textContent = panel.dataset.path ?? '';
+      }
+    });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((tab) => tab.addEventListener('click', () => select(tab)));
+  tabList.addEventListener('keydown', (e) => {
+    const i = tabs.indexOf(document.activeElement as HTMLButtonElement);
+    if (i < 0) return;
+    const next =
+      e.key === 'ArrowRight' ? tabs[(i + 1) % tabs.length]
+      : e.key === 'ArrowLeft' ? tabs[(i - 1 + tabs.length) % tabs.length]
+      : e.key === 'Home' ? tabs[0]
+      : e.key === 'End' ? tabs[tabs.length - 1]
+      : undefined;
+    if (next) {
+      e.preventDefault();
+      select(next, true);
+    }
+  });
+}
+
 // Copy email
 const copyBtn = document.querySelector<HTMLButtonElement>('[data-copy]');
 const copyLabel = copyBtn?.querySelector<HTMLElement>('[data-copy-label]');

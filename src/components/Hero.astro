@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
+import CodeWindow from './CodeWindow.astro';
 import avatar from '../assets/avatar.webp';
 import { profile } from '../data/profile';
 ---
@@ -17,6 +18,9 @@ import { profile } from '../data/profile';
         <span class="hero__accent">I build production apps end to end.</span>
       </h1>
       <p class="hero__intro">{profile.intro}</p>
+      <ul class="hero__types" aria-label="Types of apps I've built">
+        {profile.appTypes.map((t) => <li>{t}</li>)}
+      </ul>
 
       <div class="hero__ctas">
         <a class="btn btn--primary btn--lg" href="#projects">Explore projects <Icon name="arrow" size={16} /></a>
@@ -41,35 +45,8 @@ import { profile } from '../data/profile';
       </ul>
     </div>
 
-    <div class="hero__visual" aria-hidden="true">
-      <div class="editor">
-        <div class="editor__bar">
-          <span class="editor__dots"><i></i><i></i><i></i></span>
-          <span class="editor__tab is-active">engineer.dart</span>
-          <span class="editor__tab">projects.dart</span>
-        </div>
-        <pre class="editor__code"><code><span class="ln">1</span><span class="tk-k">import</span> <span class="tk-s">'package:flutter/material.dart'</span>;
-<span class="ln">2</span>
-<span class="ln">3</span><span class="tk-k">final</span> engineer = <span class="tk-t">FlutterEngineer</span>(
-<span class="ln">4</span>  name: <span class="tk-s">'Mohamed Gamal'</span>,
-<span class="ln">5</span>  role: <span class="tk-s">'Senior Flutter Developer'</span>,
-<span class="ln">6</span>  since: <span class="tk-n">2021</span>,
-<span class="ln">7</span>  platforms: [<span class="tk-s">'Android'</span>, <span class="tk-s">'iOS'</span>, <span class="tk-s">'Tablet'</span>],
-<span class="ln">8</span>  state: [<span class="tk-t">Bloc</span>, <span class="tk-t">Cubit</span>, <span class="tk-t">Riverpod</span>],
-<span class="ln">9</span>  strengths: [
-<span class="ln">10</span>    <span class="tk-s">'offline-first sync'</span>,
-<span class="ln">11</span>    <span class="tk-s">'real-time & WebRTC'</span>,
-<span class="ln">12</span>    <span class="tk-s">'ESC/POS printing'</span>,
-<span class="ln">13</span>    <span class="tk-s">'CI/CD & releases'</span>,
-<span class="ln">14</span>  ],
-<span class="ln">15</span>);
-<span class="ln">16</span>
-<span class="ln">17</span><span class="tk-k">await</span> engineer.<span class="tk-f">ship</span>(yourNextApp);<span class="caret"></span></code></pre>
-        <div class="editor__status">
-          <span><i class="ok"></i>flutter analyze · no issues</span>
-          <span>Dart</span>
-        </div>
-      </div>
+    <div class="hero__visual">
+      <CodeWindow />
     </div>
   </div>
 </section>

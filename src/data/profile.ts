@@ -3,7 +3,9 @@ export const profile = {
   shortName: 'Mohamed Gamal',
   title: 'Senior Flutter Developer',
   intro:
-    'Five years building and shipping Flutter apps for Android and iOS — including an offline-first POS & ERP system and a real-estate investment app that I built end to end.',
+    'Five years building and shipping Flutter apps for Android and iOS, on phones and tablets: from an offline-first POS & ERP system and a real-estate investment app I built end to end, to marketplaces, e-commerce and B2B products.',
+  /** Types of apps shown under the intro (all from the projects section) */
+  appTypes: ['Fintech', 'POS & ERP', 'Food marketplace', 'E-commerce', 'Legal-tech', 'B2B & SaaS', 'Community', 'On-demand'],
   /** Search/social description, kept under ~160 characters */
   metaDescription:
     'Mohamed Gamal Yaseen, Senior Flutter Developer. 5 years building Android & iOS apps end to end, including an offline-first POS and a real-estate investment app.',
@@ -34,5 +36,7 @@ export const profile = {
     'Real-time communication',
     'Thermal printing (ESC/POS)',
     'CI/CD & store releases',
+    'Performance & debugging',
+    'Mobile security (OWASP MASVS)',
   ],
 } as const;
