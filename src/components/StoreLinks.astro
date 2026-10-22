@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+import type { ProjectLink } from '../data/projects';
+
+interface Props {
+  links: ProjectLink[];
+  project: string;
+  compact?: boolean;
+}
+const { links, project, compact = false } = Astro.props;
+---
+<ul class:list={['store-links', { 'store-links--compact': compact }]} aria-label={`${project} links`}>
+  {links.map((l) => (
+    <li>
+      <a href={l.url} target="_blank" rel="noopener" aria-label={`${project} on ${l.label}`}>
+        <Icon name={l.kind} size={compact ? 14 : 16} />{l.label}
+      </a>
+    </li>
+  ))}
+</ul>

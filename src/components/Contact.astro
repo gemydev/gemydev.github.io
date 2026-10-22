@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact__panel reveal">
+      <p class="section-header__kicker"><span>06</span>Contact</p>
+      <h2 id="contact-title">Let's talk about your Flutter product.</h2>
+      <p class="contact__lead">Open to conversations about senior Flutter roles and mobile projects. Reach me by email or WhatsApp.</p>
+
+      <div class="contact__email">
+        <a class="btn btn--primary btn--lg" href={`mailto:${profile.email}`}><Icon name="mail" size={18} />{profile.email}</a>
+        <button class="btn btn--ghost btn--lg" type="button" data-copy={profile.email}>
+          <Icon name="copy" size={16} /><span data-copy-label>Copy email</span>
+        </button>
+      </div>
+
+      <ul class="contact__links">
+        <li><a href={profile.links.whatsapp} target="_blank" rel="noopener"><Icon name="whatsapp" size={16} />WhatsApp</a></li>
+        <li><a href={profile.links.linkedin} target="_blank" rel="noopener"><Icon name="linkedin" size={16} />LinkedIn</a></li>
+        <li><a href={profile.links.github} target="_blank" rel="noopener"><Icon name="github" size={16} />GitHub</a></li>
+        <li><a href={base + profile.cvFile} download><Icon name="download" size={16} />Download CV (PDF)</a></li>
+      </ul>
+      <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
+    </div>
+  </div>
+</section>

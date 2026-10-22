@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import { profile } from '../data/profile';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+<Base title={`Page not found — ${profile.shortName}`} description="This page doesn't exist." noindex>
+  <main id="main" class="not-found">
+    <div class="container not-found__inner">
+      <p class="section-header__kicker"><span>404</span>Not found</p>
+      <h1>This page doesn't exist.</h1>
+      <p class="not-found__lead">The link may be outdated. Everything lives on the home page.</p>
+      <a class="btn btn--primary btn--lg" href={base}>Back to {profile.shortName}'s portfolio</a>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .not-found { min-height: 100vh; display: grid; place-items: center; text-align: center; }
+  .not-found__inner { display: grid; justify-items: center; gap: 20px; }
+  .not-found .section-header__kicker { margin: 0; }
+  .not-found h1 { font-size: clamp(32px, 5vw, 52px); letter-spacing: -0.035em; }
+  .not-found__lead { color: var(--text-2); font-size: 17px; max-width: 440px; }
+</style>

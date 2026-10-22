@@ -1,0 +1,38 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import Icon from './Icon.astro';
+import { experience } from '../data/experience';
+---
+<section class="section section--alt" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <SectionHeader index="02" kicker="Experience" title="Five years of shipping Flutter" id="experience-title" />
+    <ol class="timeline">
+      {experience.map((role, i) => (
+        <li class="timeline__item reveal">
+          <div class="timeline__when">
+            <span>{role.start} — {role.end}</span>
+            {i === 0 && <span class="badge">Current</span>}
+          </div>
+          <div class="timeline__marker" aria-hidden="true"></div>
+          <article class="timeline__card">
+            <header>
+              <h3>{role.title}</h3>
+              <p class="timeline__company">
+                {role.url ? (
+                  <a href={role.url} target="_blank" rel="noopener">{role.company}<Icon name="external" size={14} /></a>
+                ) : role.company}
+              </p>
+            </header>
+            <p class="timeline__summary">{role.summary}</p>
+            <ul class="timeline__points">
+              {role.points.map((p) => <li>{p}</li>)}
+            </ul>
+            <ul class="timeline__projects" aria-label="Projects">
+              {role.projects.map((p) => <li>{p}</li>)}
+            </ul>
+          </article>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

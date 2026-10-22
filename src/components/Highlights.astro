@@ -1,0 +1,25 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { highlights } from '../data/highlights';
+---
+<section class="section section--alt" id="highlights" aria-labelledby="highlights-title">
+  <div class="container">
+    <SectionHeader
+      index="04"
+      kicker="Engineering highlights"
+      title="What I bring beyond the UI"
+      lead="Each highlight is tied to the product where I did the work."
+      id="highlights-title"
+    />
+    <ol class="highlights">
+      {highlights.map((h, i) => (
+        <li class="highlight reveal">
+          <span class="highlight__num">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{h.title}</h3>
+          <p class="highlight__body">{h.body}</p>
+          <p class="highlight__proof"><span>Shown in</span>{h.proof}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

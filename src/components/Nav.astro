@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import logoMark from '../assets/logo-mark.png';
+import { profile } from '../data/profile';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="brand" href="#top" aria-label={`${profile.shortName} — back to top`}>
+      <Image src={logoMark} alt="" class="brand__logo" height={28} densities={[1, 2]} loading="eager" />
+      <span class="brand__text">{profile.shortName}</span>
+    </a>
+
+    <nav class="nav__links" id="nav-menu" aria-label="Primary" data-menu>
+      {links.map((l) => <a href={l.href} data-navlink>{l.label}</a>)}
+      <a class="btn btn--primary nav__menu-cv" href={base + profile.cvFile} download>
+        <Icon name="download" size={16} />Download CV
+      </a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+        <span class="theme-icon theme-icon--sun"><Icon name="sun" /></span>
+        <span class="theme-icon theme-icon--moon"><Icon name="moon" /></span>
+      </button>
+      <a class="btn btn--primary btn--sm nav__cv" href={base + profile.cvFile} download>
+        <Icon name="download" size={16} />Download CV
+      </a>
+      <button class="icon-btn nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu" data-menu-toggle>
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+  <div class="nav__backdrop" data-menu-backdrop aria-hidden="true"></div>
+</header>

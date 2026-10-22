@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import logoMark from '../assets/logo-mark.png';
+import { profile } from '../data/profile';
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__brand"><Image src={logoMark} alt="" class="footer__logo" height={20} densities={[1, 2]} />© {year} {profile.name} · {profile.title}</p>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>

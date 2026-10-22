@@ -1,0 +1,41 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { skills } from '../data/skills';
+---
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <SectionHeader index="05" kicker="Skills" title="Technical skills" lead="Grouped by area. Proficiency levels are shown only where I've stated them." id="skills-title" />
+    <dl class="skills">
+      {skills.map((g) => (
+        <div class="skills__row reveal">
+          <dt>{g.category}</dt>
+          <dd>
+            <ul class="chips">
+              {g.items.map((s) => (
+                <li class:list={{ 'chip--level': !!s.level }}>
+                  {s.name}{s.level && <em>{s.level}</em>}
+                </li>
+              ))}
+            </ul>
+          </dd>
+        </div>
+      ))}
+    </dl>
+
+    <div class="education reveal">
+      <h3>Education</h3>
+      <div class="education__items">
+        <div>
+          <p class="education__when">2018 — 2022</p>
+          <p class="education__title">B.Sc. Computer Science</p>
+          <p>Beni Suef University, Faculty of Computers and Artificial Intelligence. Graduation project: ASAR.</p>
+        </div>
+        <div>
+          <p class="education__when">2022 — 2023</p>
+          <p class="education__title">Pre-Master of Computer Science</p>
+          <p>Beni Suef University, Faculty of Computers and Artificial Intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

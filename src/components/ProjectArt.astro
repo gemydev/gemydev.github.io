@@ -1,0 +1,56 @@
+---
+// Abstract, decorative wireframes — intentionally not screenshots.
+interface Props {
+  variant: 'pos' | 'invest' | 'commerce' | 'tickets';
+}
+const { variant } = Astro.props;
+---
+<div class={`art art--${variant}`} aria-hidden="true">
+  <div class="art__grid"></div>
+
+  {variant === 'pos' && (
+    <div class="wf wf--tablet">
+      <div class="wf__side">
+        {Array.from({ length: 9 }).map(() => <i></i>)}
+      </div>
+      <div class="wf__main">
+        <span class="wf__chip"><b></b>offline · queued for sync</span>
+        <div class="wf__lines"><i></i><i></i><i></i><i></i></div>
+        <div class="wf__total"><i></i><span></span></div>
+      </div>
+      <div class="wf__sync"><span>local db</span><em></em><span>server</span></div>
+    </div>
+  )}
+
+  {variant === 'invest' && (
+    <div class="wf wf--phone">
+      <div class="wf__head"><i></i><i></i></div>
+      <svg class="wf__chart" viewBox="0 0 160 70" preserveAspectRatio="none">
+        <path d="M0 58 L20 52 L40 55 L60 40 L80 44 L100 30 L120 33 L140 18 L160 12" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M0 58 L20 52 L40 55 L60 40 L80 44 L100 30 L120 33 L140 18 L160 12 L160 70 L0 70Z" fill="currentColor" opacity=".12" />
+      </svg>
+      <div class="wf__lines"><i></i><i></i><i></i></div>
+      <div class="wf__lock">NDA</div>
+    </div>
+  )}
+
+  {variant === 'commerce' && (
+    <div class="wf wf--phone">
+      <div class="wf__head"><i></i><i></i></div>
+      <div class="wf__products"><i></i><i></i><i></i><i></i></div>
+      <span class="wf__chip"><b></b>recurring · every 30 days</span>
+    </div>
+  )}
+
+  {variant === 'tickets' && (
+    <div class="wf wf--phone">
+      <div class="wf__head"><i></i><i></i></div>
+      <div class="wf__tickets">
+        <div><b class="s1"></b><i></i></div>
+        <div><b class="s2"></b><i></i></div>
+        <div><b class="s3"></b><i></i></div>
+        <div><b class="s1"></b><i></i></div>
+      </div>
+    </div>
+  )}
+</div>

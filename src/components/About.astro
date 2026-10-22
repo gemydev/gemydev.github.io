@@ -1,0 +1,34 @@
+---
+import { Picture } from 'astro:assets';
+import SectionHeader from './SectionHeader.astro';
+import portrait from '../assets/portrait.webp';
+import { profile } from '../data/profile';
+---
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container about">
+    <div class="about__intro">
+      <SectionHeader index="01" kicker="About" title="Ownership from the first commit to the store listing." id="about-title" />
+      <figure class="about__portrait reveal">
+        <Picture
+          src={portrait}
+          alt={`Portrait of ${profile.name}`}
+          formats={['avif', 'webp']}
+          fallbackFormat="jpg"
+          widths={[320, 480, 720]}
+          sizes="(max-width: 860px) min(90vw, 360px), 360px"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+    <div class="about__body">
+      {profile.about.map((p) => <p class="reveal">{p}</p>)}
+      <div class="about__focus reveal">
+        <h3>Where I focus</h3>
+        <ul>
+          {profile.focus.map((f) => <li>{f}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
