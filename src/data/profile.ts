@@ -20,7 +20,6 @@ export const profile = {
   cvFile: 'cv/Mohamed-Gamal-Senior-Flutter-Developer-CV.pdf',
   facts: [
     { value: '5+', label: 'years building with Flutter', note: 'since Oct 2021' },
-    { value: '4', label: 'apps I built end to end', note: 'the entire application' },
     { value: '15+', label: 'apps published on the stores', note: 'Google Play / App Store' },
   ],
   about: [
