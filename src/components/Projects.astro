@@ -11,7 +11,7 @@ import { featuredProjects, otherProjects } from '../data/projects';
       index="03"
       kicker="Selected projects"
       title="Products I've built and shipped"
-      lead="Featured work where I owned the entire Flutter application, followed by other apps I've contributed to."
+      lead="Featured apps across fintech, retail, marketplaces and legal-tech, with my role noted where I built the entire application, followed by more apps I've worked on."
       id="projects-title"
     />
 
@@ -24,7 +24,7 @@ import { featuredProjects, otherProjects } from '../data/projects';
               <span>{p.domain}</span>
               {p.nda && <span class="badge badge--muted"><Icon name="lock" size={12} />Under NDA</span>}
             </p>
-            <h3>{p.name}</h3>
+            <h3>{p.name}{p.localName && <span class="feature__local" lang="ar" dir="rtl">{p.localName}</span>}</h3>
             <p class="feature__org">
               {[p.org, p.period, p.platforms].filter(Boolean).join(' · ')}
             </p>

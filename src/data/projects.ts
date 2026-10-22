@@ -23,7 +23,7 @@ export interface Project {
   links?: ProjectLink[];
   nda?: boolean;
   /** Decorative illustration style for featured projects */
-  art?: 'pos' | 'invest' | 'commerce' | 'tickets';
+  art?: 'pos' | 'invest' | 'commerce' | 'tickets' | 'food' | 'events' | 'legal';
 }
 
 export const featuredProjects: Project[] = [
@@ -92,22 +92,62 @@ export const featuredProjects: Project[] = [
     tags: ['Flutter', 'B2B', 'Ticketing'],
     art: 'tickets',
   },
-];
-
-export const otherProjects: Project[] = [
   {
     name: 'Tanoor — Customer & Store',
     domain: 'Food marketplace · Saudi Arabia',
+    platforms: 'Android & iOS · two apps',
     summary:
-      'Order homemade food from Saudi families, plus a store app that lets restaurants and home businesses join the platform.',
-    tags: ['Two-sided marketplace'],
+      'A two-sided marketplace for homemade food: customers order from Saudi families, and the store app lets restaurants and home-based businesses apply and join the platform.',
+    highlights: [
+      'Customer app for ordering homemade food from local families.',
+      'Store app for restaurants and home businesses to join and sell.',
+    ],
+    tags: ['Marketplace', 'Two apps', 'Food delivery'],
     links: [
       { kind: 'play', label: 'Customer · Play', url: 'https://play.google.com/store/apps/details?id=com.tanoor.customer' },
       { kind: 'appstore', label: 'Customer · iOS', url: 'https://apps.apple.com/us/app/tanoor/id6756511418' },
       { kind: 'play', label: 'Store · Play', url: 'https://play.google.com/store/apps/details?id=com.tanoor.store' },
       { kind: 'appstore', label: 'Store · iOS', url: 'https://apps.apple.com/us/app/tanoor-store/id6756564610' },
     ],
+    art: 'food',
   },
+  {
+    name: 'Hawi',
+    localName: 'هاوي',
+    org: 'CodeCaique',
+    domain: 'Community · Clubs & events',
+    platforms: 'Android & iOS',
+    summary: 'A community app for subscribing to real and virtual clubs, following their events and booking attendance.',
+    highlights: ['Club subscriptions, event feeds and attendance booking in one app.'],
+    tags: ['Community', 'Events', 'Bookings'],
+    links: [
+      { kind: 'play', label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.hawi.qol&hl=en' },
+      { kind: 'appstore', label: 'App Store', url: 'https://apps.apple.com/us/app/id1594176538' },
+    ],
+    art: 'events',
+  },
+  {
+    name: 'Mohamy Online',
+    localName: 'محامي أونلاين',
+    domain: 'Legal-tech · Egypt',
+    platforms: 'Android & iOS',
+    summary:
+      'A digital platform for legal services in Egypt that connects clients with certified, specialised lawyers to handle legal tasks remotely.',
+    highlights: ['Legal tasks handled remotely by specialised lawyers, saving clients time and effort.'],
+    tags: ['Legal-tech', 'Marketplace'],
+    links: [
+      { kind: 'play', label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mohamyonline&hl=en' },
+      {
+        kind: 'appstore',
+        label: 'App Store',
+        url: 'https://apps.apple.com/us/app/%D9%85%D8%AD%D8%A7%D9%85%D9%8A-%D8%A3%D9%88%D9%86%D9%84%D8%A7%D9%8A%D9%86/id6803960739',
+      },
+    ],
+    art: 'legal',
+  },
+];
+
+export const otherProjects: Project[] = [
   {
     name: 'Qimaa — Customer & Salesperson',
     org: 'CodeCaique',
@@ -115,28 +155,6 @@ export const otherProjects: Project[] = [
     summary: 'Business app for a wholesale company, split into a customer app and a salesperson app.',
     contribution: 'Salesperson app UI and API integration; parts of the customer app UI.',
     tags: ['REST API', 'Two apps'],
-  },
-  {
-    name: 'Hawi',
-    localName: 'هاوي',
-    org: 'CodeCaique',
-    domain: 'Community · Events',
-    summary: 'Subscribe to real and virtual clubs, follow events and book attendance.',
-    tags: ['Events', 'Bookings'],
-    links: [
-      { kind: 'play', label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.hawi.qol&hl=en' },
-      { kind: 'appstore', label: 'App Store', url: 'https://apps.apple.com/us/app/id1594176538' },
-    ],
-  },
-  {
-    name: 'Mohamy Online',
-    localName: 'محامي أونلاين',
-    domain: 'Legal-tech · Egypt',
-    summary: 'Connects clients with certified, specialised lawyers to handle legal tasks remotely.',
-    tags: ['Marketplace'],
-    links: [
-      { kind: 'play', label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mohamyonline&hl=en' },
-    ],
   },
   {
     name: 'Gearshift — Customer & Washer',

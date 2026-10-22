@@ -507,6 +507,30 @@ svg { flex: none; }
 .wf__tickets .s2 { background: currentColor; }
 .wf__tickets .s3 { background: var(--ok); }
 
+.art--food { color: #f5b07a; }
+.art--events { color: #f472b6; }
+.art--legal { color: #2dd4bf; }
+.feature__local { display: block; margin-top: 6px; font-size: 0.62em; font-weight: 500; color: var(--text-2); letter-spacing: 0; text-align: left; }
+
+.wf-pair { position: relative; z-index: 1; display: flex; align-items: center; }
+.wf-pair .wf--back { margin-left: -56px; transform: translateY(18px) scale(0.9); opacity: 0.85; z-index: -1; }
+.feature:hover .wf-pair .wf--back { transform: translateY(14px) scale(0.9); }
+.wf__dishes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.wf__dishes i { aspect-ratio: 1; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); position: relative; }
+.wf__dishes i::after { content: ''; position: absolute; inset: 22%; border-radius: 50%; background: color-mix(in srgb, currentColor 30%, transparent); }
+.wf__clubs { display: flex; gap: 8px; }
+.wf__clubs i { width: 34px; height: 34px; border-radius: 50%; background: color-mix(in srgb, currentColor 22%, transparent); border: 1px solid color-mix(in srgb, currentColor 40%, transparent); }
+.wf__events { display: grid; gap: 8px; }
+.wf__events div { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); }
+.wf__events b { width: 26px; height: 28px; flex: none; border-radius: 6px; background: color-mix(in srgb, currentColor 22%, transparent); display: grid; place-items: center; }
+.wf__events b span { width: 12px; height: 3px; border-radius: 2px; background: currentColor; }
+.wf__events i { flex: 1; height: 7px; border-radius: 4px; background: var(--line-strong); }
+.wf__people { display: grid; gap: 8px; }
+.wf__people div { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); }
+.wf__people b { width: 24px; height: 24px; flex: none; border-radius: 50%; background: color-mix(in srgb, currentColor 25%, transparent); }
+.wf__people i { flex: 1; height: 7px; border-radius: 4px; background: var(--line-strong); }
+.wf__people em { width: 26px; height: 14px; border-radius: 7px; background: currentColor; opacity: 0.85; }
+
 @media (max-width: 900px) {
   .feature { grid-template-columns: 1fr; }
   .feature--flip .art { order: 0; }
@@ -515,6 +539,7 @@ svg { flex: none; }
 @media (max-width: 520px) {
   .art { min-height: 240px; padding: 28px 16px 36px; }
   .wf--phone { width: 150px; }
+  .wf-pair .wf--back { margin-left: -64px; }
 }
 
 /* Projects — compact grid */

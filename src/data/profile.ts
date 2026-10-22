@@ -21,7 +21,7 @@ export const profile = {
   facts: [
     { value: '5+', label: 'years building with Flutter', note: 'since Oct 2021' },
     { value: '4', label: 'apps I built end to end', note: 'the entire application' },
-    { value: '6', label: 'apps published on the stores', note: 'Google Play / App Store' },
+    { value: '15+', label: 'apps published on the stores', note: 'Google Play / App Store' },
   ],
   about: [
     "I'm a Senior Flutter Developer who takes ownership of the whole application — not just the screens. I built four products in their entirety, from the first architecture decisions through to delivery.",

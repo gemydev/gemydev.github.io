@@ -1,7 +1,7 @@
 ---
 // Abstract, decorative wireframes — intentionally not screenshots.
 interface Props {
-  variant: 'pos' | 'invest' | 'commerce' | 'tickets';
+  variant: 'pos' | 'invest' | 'commerce' | 'tickets' | 'food' | 'events' | 'legal';
 }
 const { variant } = Astro.props;
 ---
@@ -39,6 +39,45 @@ const { variant } = Astro.props;
       <div class="wf__head"><i></i><i></i></div>
       <div class="wf__products"><i></i><i></i><i></i><i></i></div>
       <span class="wf__chip"><b></b>recurring · every 30 days</span>
+    </div>
+  )}
+
+  {variant === 'food' && (
+    <div class="wf-pair">
+      <div class="wf wf--phone">
+        <div class="wf__head"><i></i><i></i></div>
+        <div class="wf__dishes"><i></i><i></i><i></i><i></i></div>
+        <span class="wf__chip"><b></b>home kitchen · order</span>
+      </div>
+      <div class="wf wf--phone wf--back">
+        <div class="wf__head"><i></i><i></i></div>
+        <div class="wf__lines"><i></i><i></i><i></i><i></i></div>
+        <span class="wf__chip"><b></b>store · new order</span>
+      </div>
+    </div>
+  )}
+
+  {variant === 'events' && (
+    <div class="wf wf--phone">
+      <div class="wf__head"><i></i><i></i></div>
+      <div class="wf__clubs"><i></i><i></i><i></i></div>
+      <div class="wf__events">
+        <div><b><span></span></b><i></i></div>
+        <div><b><span></span></b><i></i></div>
+        <div><b><span></span></b><i></i></div>
+      </div>
+    </div>
+  )}
+
+  {variant === 'legal' && (
+    <div class="wf wf--phone">
+      <div class="wf__head"><i></i><i></i></div>
+      <div class="wf__people">
+        <div><b></b><i></i><em></em></div>
+        <div><b></b><i></i><em></em></div>
+        <div><b></b><i></i><em></em></div>
+      </div>
+      <span class="wf__chip"><b></b>remote · legal task</span>
     </div>
   )}
 
